@@ -5,7 +5,6 @@ import com.wang.Controller.utils.R;
 import com.wang.Service.InformationService;
 import com.wang.pojo.Information;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

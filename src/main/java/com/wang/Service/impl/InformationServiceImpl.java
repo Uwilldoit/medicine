@@ -1,9 +1,11 @@
 package com.wang.Service.impl;
 
+import com.alibaba.druid.util.StringUtils;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.sun.org.apache.xpath.internal.operations.String;
 import com.wang.Dao.InformationMapper;
 import com.wang.Service.InformationService;
 import com.wang.pojo.Information;
@@ -44,7 +46,7 @@ public class InformationServiceImpl extends ServiceImpl<InformationMapper,Inform
         LambdaQueryWrapper<Information> lqw = new LambdaQueryWrapper<>();
         lqw.like(Strings.isNotEmpty(information.getName()),Information::getName,information.getName());
         lqw.like(Strings.isNotEmpty(information.getType()),Information::getType,information.getType());
-        lqw.like(Strings.isNotEmpty((information.getState()).toString()), Information::getState, information.getState());
+        //select * from information where state = ?
         lqw.like(Strings.isNotEmpty(information.getDescription()),Information::getDescription,information.getDescription());
         IPage<Information> page = new Page(currentPage,pageSize);
         informationMapper.selectPage(page,lqw);
