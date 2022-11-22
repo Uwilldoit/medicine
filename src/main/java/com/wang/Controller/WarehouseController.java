@@ -1,7 +1,7 @@
 package com.wang.Controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.wang.Controller.utils.R;
+import com.wang.utils.R;
 import com.wang.Service.WarehouseService;
 import com.wang.pojo.Warehouse;
 import org.springframework.beans.factory.annotation.Autowired;

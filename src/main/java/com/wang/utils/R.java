@@ -1,4 +1,4 @@
-package com.wang.Controller.utils;
+package com.wang.utils;
 
 import lombok.Data;
 
