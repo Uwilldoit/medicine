@@ -46,8 +46,8 @@ public class InformationServiceImpl extends ServiceImpl<InformationMapper,Inform
         LambdaQueryWrapper<Information> lqw = new LambdaQueryWrapper<>();
         lqw.like(Strings.isNotEmpty(information.getName()),Information::getName,information.getName());
         lqw.like(Strings.isNotEmpty(information.getType()),Information::getType,information.getType());
-        //select * from information where state = ?
         lqw.like(Strings.isNotEmpty(information.getDescription()),Information::getDescription,information.getDescription());
+        lqw.orderBy(true,false,Information::getState);
         IPage<Information> page = new Page(currentPage,pageSize);
         informationMapper.selectPage(page,lqw);
         return page;

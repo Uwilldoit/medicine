@@ -45,7 +45,7 @@ spring:
 
     #模板路径 -可以修改
 
-    prefix: classpath:/templates/
+    prefix: classpath:/static/
 
     #编码格式 不必填
 
@@ -80,7 +80,7 @@ server:
   port: 8081
 mybatis:
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: false
 
 mybatis-plus:
   global-config:
